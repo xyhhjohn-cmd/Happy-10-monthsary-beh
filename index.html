@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 10 Monthsary 💜</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --purple:#7b2cbf;
+  --violet:#9d4edd;
+  --light:#d8a4ff;
+  --soft:#f0d9ff;
+  --dark:#08000f;
+}
+
+body{
+  margin:0;
+  background:var(--dark);
+  color:white;
+  font-family:Arial, sans-serif;
+  overflow:hidden;
+}
+
+.screen{
+  position:fixed;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:25px;
+  overflow:hidden;
+
+  background:
+    radial-gradient(circle at 50% 40%,
+    rgba(123,44,191,.35),
+    transparent 55%),
+    linear-gradient(
+      135deg,
+      #08000f,
+      #160021,
+      #08000f
+    );
+}
+
+.screen.active{
+  display:flex;
+}
+
+.content{
+  width:min(900px,94%);
+  position:relative;
+  z-index:5;
+}
+
+h1{
+  font-size:clamp(48px,12vw,100px);
+  margin-bottom:15px;
+  color:var(--light);
+  text-shadow:
+    0 0 15px var(--violet),
+    0 0 35px var(--purple);
+}
+
+h2{
+  font-size:clamp(28px,7vw,55px);
+  margin-bottom:20px;
+  color:var(--light);
+  text-shadow:0 0 15px var(--purple);
+}
+
+p{
+  font-size:18px;
+  line-height:1.7;
+  max-width:650px;
+  margin:0 auto;
+}
+
+.small{
+  font-size:14px;
+  opacity:.8;
+}
+
+.finalHeart{
+  font-size:80px;
+  margin-bottom:15px;
+  animation:heartBeat 1.5s infinite;
+  filter:drop-shadow(0 0 15px #9d4edd);
+}
+
+@keyframes heartBeat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+}
+
+/* BUTTON */
+
+.primaryBtn{
+  margin-top:30px;
+  padding:14px 25px;
+  border:none;
+  border-radius:30px;
+
+  background:linear-gradient(
+    135deg,
+    var(--purple),
+    var(--violet)
+  );
+
+  color:white;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+
+  box-shadow:
+    0 0 15px rgba(157,78,221,.6);
+
+  transition:.25s;
+}
+
+.primaryBtn:hover{
+  transform:scale(1.05);
+  box-shadow:
+    0 0 25px rgba(216,164,255,.8);
+}
+
+/* MUSIC */
+
+.musicBtn{
+  position:fixed;
+  top:18px;
+  right:18px;
+  z-index:100;
+
+  width:45px;
+  height:45px;
+
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.25);
+
+  background:rgba(123,44,191,.5);
+  color:white;
+
+  font-size:20px;
+}
+
+/* STARS */
+
+.star{
+  position:fixed;
+  width:2px;
+  height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:.6;
+  animation:twinkle 2s infinite alternate;
+  pointer-events:none;
+}
+
+@keyframes twinkle{
+  from{opacity:.2}
+  to{opacity:1}
+}
+
+/* PARTICLES */
+
+.particle{
+  position:fixed;
+  pointer-events:none;
+  z-index:50;
+  animation:floatUp 2.5s linear forwards;
+  font-size:22px;
+}
+
+@keyframes floatUp{
+  0%{
+    transform:translateY(0) scale(.5) rotate(0deg);
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-250px) scale(1.4) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* ARROW GAME */
+
+.gameArea{
+  width:min(700px,95vw);
+  height:420px;
+  position:relative;
+  margin:20px auto;
+}
+
+.gameTitle{
+  font-size:28px;
+  color:var(--light);
+  margin-bottom:10px;
+}
+
+.gameText{
+  opacity:.8;
+  margin-bottom:20px;
+}
+
+.bow{
+  position:absolute;
+  left:8%;
+  top:50%;
+  width:90px;
+  height:160px;
+
+  border-left:5px solid var(--light);
+  border-radius:50%;
+
+  transform:translateY(-50%);
+  filter:drop-shadow(0 0 8px var(--violet));
+}
+
+.string{
+  position:absolute;
+  left:8%;
+  top:50%;
+
+  width:120px;
+  height:2px;
+
+  background:white;
+  transform:translateY(-50%);
+}
+
+.arrow{
+  position:absolute;
+
+  left:14%;
+  top:50%;
+
+  width:120px;
+  height:5px;
+
+  background:var(--light);
+
+  transform:
+    translateY(-50%)
+    rotate(0deg);
+
+  cursor:grab;
+
+  filter:drop-shadow(
+    0 0 8px var(--violet)
+  );
+
+  touch-action:none;
+}
+
+.arrow:after{
+  content:"♥";
+
+  position:absolute;
+  right:-15px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  color:#ff8de9;
+  font-size:28px;
+
+  text-shadow:
+    0 0 8px #ff5bd7,
+    0 0 18px #9d4edd;
+}
+
+.envelope{
+  position:absolute;
+
+  right:12%;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  font-size:70px;
+
+  filter:
+    drop-shadow(0 0 15px var(--violet));
+
+  animation:envelopeGlow 1.5s infinite alternate;
+}
+
+@keyframes envelopeGlow{
+  from{transform:translateY(-50%) scale(1)}
+  to{transform:translateY(-50%) scale(1.08)}
+}
+
+.hit{
+  animation:targetHit .5s forwards;
+}
+
+@keyframes targetHit{
+  50%{
+    transform:translateY(-50%) scale(1.4);
+  }
+
+  100%{
+    transform:translateY(-50%) scale(0);
+    opacity:0;
+  }
+}
+
+/* PHOTO */
+
+.photoTitle{
+  font-size:18px;
+  color:var(--light);
+  margin-bottom:15px;
+}
+
+.photo{
+  display:block;
+
+  width:min(340px,85vw);
+  max-height:55vh;
+
+  object-fit:cover;
+
+  margin:0 auto 20px;
+
+  border-radius:18px;
+
+  border:2px solid rgba(216,164,255,.5);
+
+  box-shadow:
+    0 0 20px rgba(157,78,221,.6);
+
+  animation:photoAppear 1s ease;
+}
+
+@keyframes photoAppear{
+  from{
+    opacity:0;
+    transform:scale(.9);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+/* SCROLL PAGES */
+
+.scrollScreen{
+  align-items:flex-start;
+  overflow-y:auto;
+  overflow-x:hidden;
+
+  -webkit-overflow-scrolling:touch;
+}
+
+.scrollScreen .content{
+  margin-top:45px;
+  margin-bottom:60px;
+}
+
+/* LETTER */
+
+.letter{
+  width:min(700px,95%);
+  margin:auto;
+
+  padding:25px;
+
+  border-radius:20px;
+
+  background:
+    rgba(255,255,255,.05);
+
+  border:
+    1px solid rgba(216,164,255,.2);
+
+  box-shadow:
+    0 0 30px rgba(123,44,191,.2);
+}
+
+.typing{
+  white-space:pre-line;
+  text-align:left;
+  line-height:1.8;
+  font-size:17px;
+}
+
+/* REASONS */
+
+.reasonGrid{
+  display:grid;
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:12px;
+
+  width:min(600px,95%);
+  margin:20px auto;
+}
+
+.reason{
+  padding:22px 10px;
+
+  border-radius:15px;
+
+  background:
+    rgba(123,44,191,.25);
+
+  border:
+    1px solid rgba(216,164,255,.2);
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.reason:hover{
+  transform:scale(1.05);
+  background:rgba(157,78,221,.4);
+}
+
+.reason.revealed{
+  background:
+    rgba(157,78,221,.5);
+}
+
+/* FINAL */
+
+.finalTitle{
+  font-size:clamp(35px,9vw,75px);
+  font-weight:bold;
+
+  color:var(--light);
+
+  text-shadow:
+    0 0 15px var(--violet),
+    0 0 40px var(--purple);
+}
+
+.loveTitle{
+  font-size:clamp(32px,8vw,65px);
+  color:var(--light);
+
+  text-shadow:
+    0 0 20px var(--violet);
+}
+
+.loveButtons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+
+  margin-top:30px;
+}
+
+.loveBtn{
+  border:none;
+  border-radius:30px;
+
+  padding:14px 28px;
+
+  font-weight:bold;
+  font-size:16px;
+
+  color:white;
+  cursor:pointer;
+}
+
+.yesBtn{
+  background:linear-gradient(
+    135deg,
+    #7b2cbf,
+    #9d4edd
+  );
+}
+
+.noBtn{
+  background:#3a123f;
+  position:relative;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .screen{
+    padding:18px;
+  }
+
+  p{
+    font-size:16px;
+  }
+
+  .gameArea{
+    height:360px;
+  }
+
+  .reasonGrid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .letter{
+    padding:20px;
+  }
+
+  .typing{
+    font-size:16px;
+  }
+
+  .scrollScreen .content{
+    width:94%;
+    margin-top:25px;
+    margin-bottom:60px;
+  }
+
+  .primaryBtn{
+    margin-top:22px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+
+<button
+  id="musicBtn"
+  class="musicBtn"
+  onclick="toggleMusic()">
+  🎵
+</button>
+
+<audio id="music" loop>
+  <source
+    src="music.mp3"
+    type="audio/mpeg">
+</audio>
+
+
+<!-- PAGE 0 -->
+
+<section
+  class="screen active"
+  id="page0">
+
+  <div class="content">
+
+    <div class="gameTitle">
+      🏹 A Little Surprise 💜
+    </div>
+
+    <p class="gameText">
+      Aim your arrow at the envelope 💌
+    </p>
+
+    <p class="small">
+      <b>Drag the arrow and release!</b>
+    </p>
+
+    <div class="gameArea">
+
+      <div class="bow"></div>
+
+      <div class="string"></div>
+
+      <div id="arrow"
+           class="arrow"></div>
+
+      <div class="envelope">
+        💌
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 1 -->
+
+<section class="screen">
+
+  <div class="content">
+
+    <div class="finalHeart">
+      💜
+    </div>
+
+    <h1>
+      Hey, Love...
+    </h1>
+
+    <p>
+      I made something special
+      just for you.
+    </p>
+
+    <br>
+
+    <p class="small">
+      A little surprise for our
+      10th monthsary.
+    </p>
+
+    <button
+      class="primaryBtn"
+      onclick="nextPage()">
+      START OUR STORY →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="screen">
+
+  <div class="content">
+
+    <h2>
+      Our Story 💜
+    </h2>
+
+    <div
+      id="typingText"
+      class="typing">
+    </div>
+
+    <button
+      class="primaryBtn"
+      onclick="nextPage()">
+      Continue →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 3 -->
+
+<section class="screen">
+
+  <div class="content">
+
+    <h1>10</h1>
+
+    <h2>
+      MONTHS WITH YOU
+    </h2>
+
+    <p>
+      Ten months may be a number,
+      but behind that number are
+      countless memories.
+    </p>
+
+    <br>
+
+    <p>
+      Every laugh, every conversation,
+      every little moment...
+      became part of our story.
+    </p>
+
+    <button
+      class="primaryBtn"
+      onclick="nextPage()">
+      SEE OUR MEMORY →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 4 -->
+
+<section class="screen">
+
+  <div class="content">
+
+    <h2>
+      Our Memory 📸
+    </h2>
+
+    <div class="photoTitle">
+      One Special Memory
+    </div>
+
+    <img
+      class="photo"
+      src="photo.jpg"
+      alt="Our Memory">
+
+    <p>
+      One photo, but a whole lot
+      of memories behind it. 💜
+    </p>
+
+    <button
+      class="primaryBtn"
+      onclick="nextPage()">
+      CONTINUE →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 5 -->
+
+<section class="screen scrollScreen">
+
+  <div class="content">
+
+    <div class="letter">
+
+      <h2>
+        For You, Love 💌
+      </h2>
+
+      <div
+        id="letterText"
+        class="typing">
+      </div>
+
+    </div>
+
+    <button
+      class="primaryBtn"
+      onclick="nextPage()">
+      Continue →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 6 -->
+
+<section class="screen">
+
+  <div class="content">
+
+    <h2>
+      10 Little Things 💜
+    </h2>
+
+    <p class="small">
+      Tap each one.
+    </p>
+
+    <div class="reasonGrid">
+
+      <div
+        class="reason"
+        onclick="reveal(this)">
+        💜 #1
+      </div>
+
+      <div
+        class="reason"
+        onclick="reveal(this)">
+        ✨ #2
+      </div>
+
+      <div
+        class="reason"
+        onclick="reveal(this)">
+        💕 #3
+      </div>
+
+      <div
+        class="reason"
+        onclick="reveal(this)">
+        🌙 #4
+      </div>
+
+      <div
+        class="reason"
+        onclick="reveal(this)">
+        📸 #5
+      </div>
+
+      <div
+        class="reason"
+        onclick="reveal(this)">
+        🤍 #6
+      </div>
+
+      <div
+        class="reason"
+        onclick="reveal(this)">
+        🌸 #7
+      </div>
+
+      <div
+        class="reason"
+        onclick="reveal(this)">
+        🫶 #8
+      </div>
+
+      <div
+        class="reason"
+        onclick="reveal(this)">
+        🌌 #9
+      </div>
+
+      <div
+        class="reason"
+        onclick="reveal(this)">
+        💜 #10
+      </div>
+
+    </div>
+
+    <button
+      class="primaryBtn"
+      onclick="nextPage()">
+      ONE LAST THING →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 7 -->
+
+<section class="screen">
+
+  <div class="content">
+
+    <div class="finalHeart">
+      💜
+    </div>
+
+    <div class="finalTitle">
+      I Still Choose You.
+    </div>
+
+    <br>
+
+    <p>
+      Ten months later,
+      and you're still one of
+      the most beautiful parts
+      of my story.
+    </p>
+
+    <br>
+
+    <button
+      class="primaryBtn"
+      onclick="openLoveQuestion()">
+      OPEN MY LAST MESSAGE 💌
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 8 -->
+
+<section class="screen scrollScreen">
+
+  <div class="content">
+
+    <div class="letter">
+
+      <h2>
+        My Last Message 💜
+      </h2>
+
+      <p>
+        Happy 10th monthsary, love.
+      </p>
+
+      <br>
+
+      <p>
+        Thank you for every moment
+        we've shared, for every laugh,
+        every conversation, and even
+        the moments that taught us
+        how to understand each other
+        better.
+      </p>
+
+      <br>
+
+      <p>
+        I don't know what every
+        tomorrow will look like,
+        but I'm thankful that these
+        past ten months became part
+        of my story with you.
+      </p>
+
+      <br>
+
+      <p>
+        And if we're given more time,
+        I hope we can continue making
+        memories worth keeping.
+      </p>
+
+      <br>
+
+      <p>
+        <b>
+          Happy 10th Monthsary,
+          My Love. 💜
+        </b>
+      </p>
+
+    </div>
+
+    <button
+      class="primaryBtn"
+      onclick="nextPage()">
+      CONTINUE →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 9 -->
+
+<section class="screen">
+
+  <div class="content">
+
+    <div class="finalHeart">
+      💜
+    </div>
+
+    <div class="loveTitle">
+      Do you love me? 💕
+    </div>
+
+    <br>
+
+    <p>
+      Be honest... 👀
+    </p>
+
+    <div class="loveButtons">
+
+      <button
+        id="yesBtn"
+        class="loveBtn yesBtn"
+        onclick="loveYes()">
+        YES 💜
+      </button>
+
+      <button
+        id="noBtn"
+        class="loveBtn noBtn"
+        onclick="loveNo()">
+        NO 😭
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 10 -->
+
+<section class="screen">
+
+  <div class="content">
+
+    <div class="finalHeart">
+      💜
+    </div>
+
+    <h2>
+      I Knew It! 😭💜
+    </h2>
+
+    <p>
+      Then let's continue making
+      more beautiful memories together.
+    </p>
+
+    <button
+      class="primaryBtn continueBtn"
+      onclick="continueOurMemories()">
+      CONTINUE OUR MEMORIES 💜
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- PAGE 11 -->
+
+<section class="screen">
+
+  <div class="content">
+
+    <div class="finalHeart">
+      💜
+    </div>
+
+    <div class="finalTitle">
+      OUR STORY CONTINUES
+    </div>
+
+    <br>
+
+    <p>
+      More laughs.
+      More memories.
+      More moments.
+      More chapters.
+    </p>
+
+    <br>
+
+    <p>
+      And hopefully...
+      many more months together. 💜
+    </p>
+
+  </div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   PAGE SYSTEM
+========================= */
+
+let currentPage = 0;
+
+const pages =
+  document.querySelectorAll(".screen");
+
+function showPage(index){
+
+  if(index < 0) index = 0;
+
+  if(index >= pages.length){
+    index = pages.length - 1;
+  }
+
+  pages.forEach(page=>{
+    page.classList.remove("active");
+  });
+
+  pages[index].classList.add("active");
+
+  currentPage = index;
+
+  if(
+    pages[index].classList.contains(
+      "scrollScreen"
+    )
+  ){
+    pages[index].scrollTop = 0;
+  }
+
+  if(index === 2){
+    startStoryTyping();
+  }
+
+  if(index === 5){
+    startLetterTyping();
+  }
+
+}
+
+function nextPage(){
+  showPage(currentPage + 1);
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+const music =
+  document.getElementById("music");
+
+const musicBtn =
+  document.getElementById("musicBtn");
+
+let musicStarted = false;
+
+function startMusic(){
+
+  music.play()
+    .then(()=>{
+      musicStarted = true;
+      musicBtn.textContent = "🔊";
+    })
+    .catch(()=>{
+      musicBtn.textContent = "🎵";
+    });
+
+}
+
+function toggleMusic(){
+
+  if(music.paused){
+
+    music.play();
+
+    musicBtn.textContent = "🔊";
+
+  }else{
+
+    music.pause();
+
+    musicBtn.textContent = "🎵";
+
+  }
+
+}
+
+
+/* =========================
+   ARROW GAME
+========================= */
+
+const arrow =
+  document.getElementById("arrow");
+
+let dragging = false;
+let gameFinished = false;
+
+function moveArrow(clientX, clientY){
+
+  const rect =
+    document.querySelector(".gameArea")
+    .getBoundingClientRect();
+
+  let x =
+    clientX - rect.left;
+
+  let y =
+    clientY - rect.top;
+
+  x = Math.max(
+    40,
+    Math.min(x, rect.width - 100)
+  );
+
+  y = Math.max(
+    40,
+    Math.min(y, rect.height - 40)
+  );
+
+  arrow.style.left =
+    (x - 20) + "px";
+
+  arrow.style.top =
+    y + "px";
+
+}
+
+arrow.addEventListener(
+  "pointerdown",
+  e=>{
+
+    if(gameFinished) return;
+
+    dragging = true;
+
+    arrow.setPointerCapture(e.pointerId);
+
+  }
+);
+
+arrow.addEventListener(
+  "pointermove",
+  e=>{
+
+    if(!dragging || gameFinished)
+      return;
+
+    moveArrow(
+      e.clientX,
+      e.clientY
+    );
+
+  }
+);
+
+arrow.addEventListener(
+  "pointerup",
+  e=>{
+
+    if(!dragging || gameFinished)
+      return;
+
+    dragging = false;
+
+    checkArrowHit();
+
+  }
+);
+
+function checkArrowHit(){
+
+  const game =
+    document.querySelector(".gameArea");
+
+  const gameRect =
+    game.getBoundingClientRect();
+
+  const arrowRect =
+    arrow.getBoundingClientRect();
+
+  const envelope =
+    document.querySelector(".envelope");
+
+  const envelopeRect =
+    envelope.getBoundingClientRect();
+
+  const arrowX =
+    arrowRect.right;
+
+  const arrowY =
+    arrowRect.top +
+    arrowRect.height / 2;
+
+  const targetX =
+    envelopeRect.left +
+    envelopeRect.width / 2;
+
+  const targetY =
+    envelopeRect.top +
+    envelopeRect.height / 2;
+
+  const distance =
+    Math.sqrt(
+      Math.pow(
+        arrowX - targetX,
+        2
+      ) +
+      Math.pow(
+        arrowY - targetY,
+        2
+      )
+    );
+
+  if(distance < 130){
+
+    hitTarget();
+
+  }else{
+
+    arrow.style.left = "14%";
+    arrow.style.top = "50%";
+
+  }
+
+}
+
+function hitTarget(){
+
+  if(gameFinished) return;
+
+  gameFinished = true;
+
+  arrow.style.transition =
+    ".5s ease";
+
+  arrow.style.left = "70%";
+
+  createBurst();
+
+  /* MUSIC STARTS HERE */
+  startMusic();
+
+  setTimeout(()=>{
+
+    document
+      .querySelector(".envelope")
+      .classList.add("hit");
+
+  },250);
+
+  setTimeout(()=>{
+
+    showPage(1);
+
+  },1000);
+
+}
+
+
+/* =========================
+   TYPING
+========================= */
+
+const storyMessage =
+`Ten months ago, something
+beautiful started.
+
+Since then, we've shared
+so many little moments.
+
+Some were happy.
+Some were difficult.
+
+But every moment became
+part of our story.
+
+And today...
+
+I just want to celebrate
+the ten months we shared. 💜`;
+
+const letterMessage =
+`Happy 10th monthsary, love. 💜
+
+Ten months may sound like just a number, but for me, it carries so many memories, conversations, laughs, little moments, and even the times when things weren't perfect between us.
+
+Thank you for staying, for understanding me, and for being someone I can share my thoughts and feelings with.
+
+I know we aren't perfect, and I don't expect everything to always be perfect.
+
+What matters to me is that we've shared something real, something that gave us memories worth keeping.
+
+These ten months became a special chapter of my life because you were part of it.
+
+And if we're given more time together, I hope we can continue creating moments we'll look back on someday with a smile.
+
+Happy 10th monthsary to us, love. 💜`;
+
+let storyTyped = false;
+let letterTyped = false;
+
+function typeText(
+  element,
+  text,
+  speed=35,
+  callback=null
+){
+
+  element.textContent = "";
+
+  let i = 0;
+
+  function type(){
+
+    if(i < text.length){
+
+      element.textContent +=
+        text.charAt(i);
+
+      i++;
+
+      setTimeout(
+        type,
+        speed
+      );
+
+    }else{
+
+      if(callback)
+        callback();
+
+    }
+
+  }
+
+  type();
+
+}
+
+function startStoryTyping(){
+
+  if(storyTyped) return;
+
+  storyTyped = true;
+
+  typeText(
+    document.getElementById(
+      "typingText"
+    ),
+    storyMessage,
+    30
+  );
+
+}
+
+function startLetterTyping(){
+
+  if(letterTyped) return;
+
+  letterTyped = true;
+
+  typeText(
+    document.getElementById(
+      "letterText"
+    ),
+    letterMessage,
+    22
+  );
+
+}
+
+
+/* =========================
+   REASONS
+========================= */
+
+const reasons = [
+
+  "Your smile. 💜",
+
+  "The little conversations. ✨",
+
+  "The memories we've made. 💕",
+
+  "The way you make moments special. 🌙",
+
+  "Every picture worth remembering. 📸",
+
+  "The comfort you give. 🤍",
+
+  "The little things you do. 🌸",
+
+  "Having someone to share moments with. 🫶",
+
+  "The memories that stay. 🌌",
+
+  "Simply because you're part of my story. 💜"
+
+];
+
+function reveal(element){
+
+  const index =
+    [...element.parentElement.children]
+    .indexOf(element);
+
+  if(element.classList.contains(
+    "revealed"
+  )) return;
+
+  element.classList.add(
+    "revealed"
+  );
+
+  element.textContent =
+    reasons[index];
+
+}
+
+
+/* =========================
+   LOVE QUESTION
+========================= */
+
+function openLoveQuestion(){
+
+  nextPage();
+
+}
+
+function loveYes(){
+
+  createCelebration();
+
+  setTimeout(()=>{
+
+    nextPage();
+
+  },700);
+
+}
+
+function loveNo(){
+
+  const button =
+    document.getElementById(
+      "noBtn"
+    );
+
+  const parent =
+    button.parentElement;
+
+  const maxX =
+    Math.max(
+      0,
+      parent.clientWidth -
+      button.offsetWidth
+    );
+
+  const maxY = 100;
+
+  const x =
+    Math.random() * maxX;
+
+  const y =
+    Math.random() * maxY -
+    50;
+
+  button.style.transform =
+    `translate(${x}px,${y}px)`;
+
+}
+
+const noButton =
+  document.getElementById("noBtn");
+
+noButton.addEventListener(
+  "pointerenter",
+  loveNo
+);
+
+noButton.addEventListener(
+  "touchstart",
+  e=>{
+    e.preventDefault();
+    loveNo();
+  }
+);
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+const symbols = [
+  "💜",
+  "💖",
+  "💕",
+  "💗",
+  "💓",
+  "💞",
+  "✨",
+  "🌸",
+  "🫶",
+  "🥰",
+  "😍",
+  "🎉",
+  "🎊",
+  "⭐",
+  "🌙"
+];
+
+function createParticle(
+  x = Math.random() * window.innerWidth,
+  y = window.innerHeight + 20
+){
+
+  const particle =
+    document.createElement(
+      "div"
+    );
+
+  particle.className =
+    "particle";
+
+  particle.textContent =
+    symbols[
+      Math.floor(
+        Math.random() *
+        symbols.length
+      )
+    ];
+
+  particle.style.left =
+    x + "px";
+
+  particle.style.top =
+    y + "px";
+
+  particle.style.fontSize =
+    (16 +
+      Math.random() * 22) +
+    "px";
+
+  document.body.appendChild(
+    particle
+  );
+
+  setTimeout(()=>{
+    particle.remove();
+  },2600);
+
+}
+
+function createBurst(){
+
+  for(let i=0;i<25;i++){
+
+    setTimeout(()=>{
+      createParticle(
+        window.innerWidth/2 +
+        (Math.random()*200-100),
+
+        window.innerHeight/2 +
+        (Math.random()*100-50)
+      );
+    },i*40);
+
+  }
+
+}
+
+function createCelebration(){
+
+  for(let i=0;i<70;i++){
+
+    setTimeout(()=>{
+      createParticle();
+    },i*35);
+
+  }
+
+}
+
+function continueOurMemories(){
+
+  createCelebration();
+
+  setTimeout(()=>{
+
+    showPage(11);
+
+    createCelebration();
+
+  },800);
+
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+for(let i=0;i<100;i++){
+
+  const star =
+    document.createElement(
+      "div"
+    );
+
+  star.className = "star";
+
+  star.style.left =
+    Math.random()*100 + "%";
+
+  star.style.top =
+    Math.random()*100 + "%";
+
+  star.style.animationDelay =
+    Math.random()*2 + "s";
+
+  document.body.appendChild(
+    star
+  );
+
+}
+
+</script>
+
+</body>
+</html>
